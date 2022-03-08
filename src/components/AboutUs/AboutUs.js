@@ -30,11 +30,11 @@ const AboutUs = () => {
     
   </div>
 </div></div>
-    <div class="col-6 col-md-4">
+     <div class="col-6 col-md-4">
     <img src={Image4} alt="" className="img-fluid" />
     <br></br>
-    <button type="button" class="btn btn-success ms-5">Book Table</button> 
-    </div>
+    {/* <button type="button" class="btn btn-success ms-5">Book Table</button>  */}
+    </div> 
   </div>
     );
 };
