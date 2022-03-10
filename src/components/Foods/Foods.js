@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee,fasFasearch } from '@fortawesome/free-solid-svg-icons'
 
 import { Button,FormControl,Form } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Foods = () => {
 
@@ -16,25 +16,36 @@ const Foods = () => {
 
     const [displayItems, setDisplayItems] = useState([])
 
- const dispatch= useDispatch()
+    const {cartItems}=useSelector(state=>state.cartReducer)
+
+
+
+
+
+
+
+
+
+
+//  const dispatch= useDispatch()
 
 
 
     let total =cart.reduce((previous, product) => previous + product.price, 0);
 
 
-    const handleAddFood = (food) => {
+    // const handleAddFood = (food) => {
 
-        dispatch({type: 'add_TO_Cart', payload:food})
-
-
-        // const newCart= [...cart, food];
-        // setCart(newCart);
-
-        console.log('Product Added',food)
+    //     dispatch({type: 'add_TO_Cart', payload:food})
 
 
-    }
+    //     // const newCart= [...cart, food];
+    //     // setCart(newCart);
+
+    //     console.log('Product Added',food)
+
+
+    // }
 
 
 
@@ -66,7 +77,7 @@ const Foods = () => {
 
     return (
         <div style={{ marginTop: '3%',  }}>
-            <h1 style={{ color: 'black', fontFamily: 'Zen Dots', marginLeft: '-60%' }}>Menues</h1>
+            
 
             <div className="search-container" md="6">
       <form className="form-inline mt-4 mb-4">
@@ -78,30 +89,16 @@ const Foods = () => {
       </form>
     </div>
 
-    
-
-            
-            
-
-            <h5>summary:{cart.length}</h5>
-            <h5>{total} {cart.name}</h5>
-            
 
             {
 
                 // foods.map(food => <ShowFoods food={food}  handleAddItem={handleAddFood}
                 //     ></ShowFoods>) 
 
-                displayItems.map(food => <ShowFoods food={food}  handleAddItem={handleAddFood} cart={ cart} setCart={ setCart}
+                displayItems.map(food => <ShowFoods food={food}   
                     ></ShowFoods>) //searching
 
             }
-
-             {
-                cart.map(item =>  <Cart  item={item}> </Cart>)
-            } 
-
-
 
         </div>
     );

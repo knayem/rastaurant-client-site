@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './ShowFoods.css'
 import {Link} from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDollarSign,faShoppingCart,faCircleDollar } from '@fortawesome/free-solid-svg-icons'
 
-
+import { useDispatch, useSelector } from 'react-redux';
  
- 
+ import Cart from '../Cart/Cart.js'
  
 
 import { Button, Card,Container,Row,Col } from 'react-bootstrap';
@@ -16,13 +16,26 @@ import { Button, Card,Container,Row,Col } from 'react-bootstrap';
 const ShowFoods = (props) => {
   // console.log(props)
     const {price,shortDescription,type,name,images,id}=props.food;
-   
+    const dispatch= useDispatch()
+    const {cartItems}=useSelector(state=>state.cartReducer)
+
+
+
+    const handleAddFood = () => {
+
+      dispatch({type: 'ADD_TO_CART', payload:props.food})
+      console.log('Product Added',props.food)
+
+
+  }
+
+ 
     return (
 
-
-
 <div className="contain-cart d-flex align-items-center  justify-content-around  ">
-<h1 style={{ color: 'black', fontFamily: 'Zen Dots', marginLeft: '-60%' }}>Menuess</h1>
+  
+
+
 
 <Container  className="d-flex cart-items" >
 
@@ -43,7 +56,7 @@ const ShowFoods = (props) => {
 
 <div className="d-flex ">
 
-   <Button btn variant="warning" onClick={() =>props.handleAddItem(props.food)}>add to cart <FontAwesomeIcon icon={faShoppingCart} /></Button>  ...
+   <Button btn variant="warning" onClick={() =>handleAddFood(props.food)}>add to cart <FontAwesomeIcon icon={faShoppingCart} /></Button>
    <Link to={`/food/${id}`}> <Button btn variant="primary" >View   </Button>
    </Link>
    

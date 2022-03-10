@@ -14,4 +14,4 @@ cartItems : JSON.parse(localStorage.getItem('cartItems'))?? []
 
 }
 
- export const store = createStore(rootReducer,initialStore,composeEnhancers())
+ export  const store = createStore(rootReducer,initialStore,composeEnhancers());

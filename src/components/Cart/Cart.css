@@ -1,5 +1,7 @@
 
-
+.twin-container{
+    display: flex;
+}
 .foodContainer {
 
 

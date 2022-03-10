@@ -31,20 +31,7 @@ function App() {
   console.log(loggedInUser);
 
 
-  const [cart , setCart] = useState([]);
-  const cartHandler = (data) => {
-    const alreadyAdded = cart.find(crt => crt.id == data.id );
-    const newCart = [...cart,data]
-    setCart(newCart);
-    if(alreadyAdded){
-      const reamingCarts = cart.filter(crt => cart.id != data);
-      setCart(reamingCarts);
-    }else{
-      const newCart = [...cart,data]
-      setCart(newCart);
-    }
-   
-  }
+  
 
 
   return (

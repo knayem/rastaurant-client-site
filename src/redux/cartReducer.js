@@ -4,8 +4,9 @@ const initialState = {
     cartItems: []
 
 }
+//()
 
-export const CartReducer = (state = initialState, action) => {
+export const cartReducer = (state = initialState, action) => {
 
     switch (action.type) {
 
@@ -20,7 +21,20 @@ export const CartReducer = (state = initialState, action) => {
 
 
         }
-        default:
+
+        case 'REMOVE_FROM_CART': {
+
+            return {
+                ...state,
+                cartItems: state.cartItems.filter(itm=>itm.id !== action.payload.id)
+
+
+            }
+
+
+        }
+
+        default: return state
 
     }
 
