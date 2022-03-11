@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css'
-import NavImg from '../../../images/navimg.png'
+import NavImg from '../../../images/ppr-remove.png'
 import { useSelector } from 'react-redux';
 import { FaCartPlus } from 'react-icons/fa'
 
@@ -12,8 +12,9 @@ const Navbar = () => {
   return (
     <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-toggler rounded text">
       <div class="container-fluid ">
-        <img src={NavImg} alt="" width="36" height="30" class="d-inline-block align-text-top" />
+       
         <Link class="navbar-brand" to="#">Testy foods</Link>
+        <img src={NavImg} alt="" width="50" height="45" class="d-inline-block align-text-top" />.........
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>

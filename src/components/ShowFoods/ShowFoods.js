@@ -32,7 +32,37 @@ const ShowFoods = (props) => {
  
     return (
 
-<div className="contain-cart d-flex align-items-center  justify-content-around  ">
+      <div className="col-md-3 mb-3">
+     
+     <Container  className="d-flex cart-items" >
+          <div className="card text-center ">
+              <img  style={{ height:'50%' , width:'60%', marginLeft:'24%' }} src={images} alt="" className="card-img-top "/>
+              <div className="card-body ">
+                  <h5>{name}</h5>
+                  <p>{shortDescription}</p>
+
+                  <div className="cart-actions">
+                  <h1 style={{ color: 'white', textAlign: 'center',textWeight: 'bold' }}>  {price}<FontAwesomeIcon icon={faDollarSign} />  </h1> 
+                  
+                  <div  className="d-flex btn">
+
+                  <Button btn variant="warning" onClick={() =>handleAddFood(props.food)}>add to cart <FontAwesomeIcon icon={faShoppingCart} /></Button>-
+   <Link to={`/food/${id}`}> <Button btn variant="primary" >View   </Button>
+   </Link>
+              </div>
+   
+   </div>
+                  </div>
+                 
+          </div>
+          </Container>
+     
+  </div>
+
+
+
+
+/* <div  className="contain-cart d-flex align-items-center  justify-content-around  ">
   
 
 
@@ -71,7 +101,7 @@ const ShowFoods = (props) => {
        
 </Container>
 
-</div>
+</div> */
       
       
 
@@ -79,136 +109,6 @@ const ShowFoods = (props) => {
 
 
 
-//////////////////////////////////////////////////////////////////////////////
-
-
-// <Container style={{ backgroundColor: 'whiteSmoke',}}>
-
-// <Row class="d-flex " >
-//   <Col  sm={8}>
-  
-//   <Card style={{ width: '18rem', height:'90%' ,marginTop:'1%',}} className="  align-items-center
-//       justify-content-around  ">
-// <Card.Img variant="top" src={images} />
-// <Card.Body>
-//   <Card.Title> <h2> {name}</h2> </Card.Title>
-//   <Card.Text>
-// {shortDescription}  
-// </Card.Text>
-
-
-// <div className="cart-actions">
-// <h1 style={{ color: 'red', textAlign: 'center'}} > {price}$ </h1> 
-
-// <div className="d-flex">
-
-//  <Button variant="warning" onClick={() =>props.handleAddItem(props.food)}>add to cart <FontAwesomeIcon icon={faShoppingCart} /></Button>  
-//  <Link to={`/food/${id}`}> <Button variant="primary" >View   </Button>
-//  </Link>
- 
-//  </div>
-// </div>
-
-
-  
-// </Card.Body>
-// </Card>
-
-
-
-  
-  
-//   </Col>
-//   <Col sm={4}> <h3>  </h3> </Col>
-// </Row>
-// </Container>
-
-
-
-
-
-
-
-
-
-//////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-      // <section>
-      //   <div class="container">
-      //     <div class="card">
-      //       <div class="content">
-      //         <div class="imgBx">
-      //         <img src={images}/>
-      //         </div>
-      //         <div class="contentBx">
-      //           <h3>Lion<br/><span>Happy Birthday</span></h3>
-      //         </div>
-      //       </div>
-      //       <ul class="sci">
-      //         <li>
-      //           <a href="">happy</a>
-      //         </li>
-      //         <li>
-      //           <a href="">birth</a>
-      //         </li>
-      //         <li>
-      //           <a href="">day</a>
-      //         </li>
-      //       </ul>
-      //     </div>
-          
-        
-      //   </div>
-      // </section>
-    
-
-
-    
-
-/* <div className="col-md-8 offset-1">
-     <Container >
-  <Row >
-  
-    <Col sm={3}  >
-    <Card.Img   style={{ width: '60%', height: '200px' }} variant="top" src={images} />
-    </Col>
-    <Col sm={9}>
-    <Card.Body>
-         <Card.Text>
-           <h3 style={{ color: 'black', textAlign: 'left',marginTop: '5%' }}>  {name}  </h3>
-            <h2 style={{ color: 'red',textAlign: 'left'}}> {price}$</h2> 
-            <h5 style={{ color: 'black', textAlign: 'left',marginTop: '5%' }}>  {shortDescription}  </h5>
-           
-            
-             <Button style={{ marginTop: '2px', marginLeft: '-85%'}} variant="primary"  >Buy Now </Button>
-              
-         </Card.Text>
-
-       </Card.Body></Col>
-      
-  </Row>
-  
-</Container>
-
-          
-            
-            </div>
-            <div className="col-md-4">
-                
-            </div> */
-            
-      
-
-
-  //  </div>
     );
 };
 

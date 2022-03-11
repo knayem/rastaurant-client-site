@@ -1,55 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import ShowFoods from '../ShowFoods/ShowFoods';
-import Cart from '../Cart/Cart';
 import './Food.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee,fasFasearch } from '@fortawesome/free-solid-svg-icons'
 
-import { Button,FormControl,Form } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Foods = () => {
 
     const [foods, setFoods] = useState([])
 
-    const [cart, setCart] = useState([])
 
     const [displayItems, setDisplayItems] = useState([])
 
     const {cartItems}=useSelector(state=>state.cartReducer)
 
 
-
-
-
-
-
-
-
-
-//  const dispatch= useDispatch()
-
-
-
-    let total =cart.reduce((previous, product) => previous + product.price, 0);
-
-
-    // const handleAddFood = (food) => {
-
-    //     dispatch({type: 'add_TO_Cart', payload:food})
-
-
-    //     // const newCart= [...cart, food];
-    //     // setCart(newCart);
-
-    //     console.log('Product Added',food)
-
-
-    // }
-
-
-
-    
+   
 
     useEffect(() => {
         fetch('https://red-onion-backend.herokuapp.com/foods')
@@ -73,13 +38,13 @@ const Foods = () => {
           setDisplayItems(matchItems);
       }
 
-
+     
 
     return (
-        <div style={{ marginTop: '3%',  }}>
-            
+        <div style={{ marginTop: '3%',  }} className="row my-5">
+              
 
-            <div className="search-container" md="6">
+            <div style={{ marginLeft: '25%',}}className="search-container" md="6">
       <form className="form-inline mt-4 mb-4">
        
         
@@ -88,6 +53,8 @@ const Foods = () => {
        
       </form>
     </div>
+
+     <h1 style={{ marginLeft: '44%',  }} > Menues</h1> 
 
 
             {

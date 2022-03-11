@@ -13,8 +13,19 @@ const Cart = () => {
 
     const dispatch = useDispatch();
     const { cartItems } = useSelector(state => state.cartReducer)
-
-    let total = cartItems.reduce((previous, product) => previous + product.price, 0);
+     
+    const [quantity, setQuantity]= useState(1)
+    
+    const subTotal = cartItems.reduce((acc,crr) => {
+        return acc + (crr.price * crr.price) ;
+    },0)
+    const totalQuantity = cartItems.reduce((acc,crr) => {
+        return acc + crr.quantity ;
+    },0)
+    //const tax = (subTotal / 100) * 5;
+    //const deliveryFee = totalQuantity && 2;
+    //const grandTotal = subTotal +  deliveryFee;
+    //let total = cartItems.reduce((previous, product) => previous + product.price, 0);
 
     const removeFromCart = (food) => {
 
@@ -43,6 +54,7 @@ const Cart = () => {
                         <tr>
                             <th>Image</th>
                             <th>Name</th>
+                            <th>Quantity</th>
                             <th>Price</th>
                             <th>Action</th>
 
@@ -56,6 +68,11 @@ const Cart = () => {
                             return <tr>
                                 <td> <img src={item.images} height="100" width="100" /></td>
                                 <td>{item.name}</td>
+                                <td>
+                                <div className="cart-controller ml-3 btn">
+                            <button className="btn" onClick={() => setQuantity(quantity <= 1 ? 1 : quantity - 1)}>-</button> {quantity} <button className="btn" onClick={() => setQuantity(quantity + 1)}>+</button>
+                        </div>
+                                </td>
                                 <td>{item.price}<span style={{ fontWeight: 'bold', color: 'green' }}>($) </span>   </td>
                                 <td> <FaTrash onClick={() => removeFromCart(item)} /> </td>
 
@@ -69,7 +86,7 @@ const Cart = () => {
 
                 <div className="cart-container mt-5">
 
-                    <h1 style={{ marginLeft: '16%', fontSize: '30px' }}>Total Amounts:<br></br>{total} <span style={{ color: 'red' }}>($) </span> </h1>
+                    <h1 style={{ marginLeft: '16%', fontSize: '30px' }}>Total Amounts:<br></br>{subTotal} <span style={{ color: 'red' }}>($) </span> </h1>
                     <br></br>
                     <button style={{ marginLeft: '16%'}} className="btn btn-primary">Place Order</button>
                 </div>
