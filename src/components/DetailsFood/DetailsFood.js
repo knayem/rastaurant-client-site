@@ -42,7 +42,7 @@ const DetailsFood = () => {
     return (
         <div>
             <Navbar></Navbar>
-             <Container style={{marginTop: '10%'}}>
+             <Container style={{marginTop: '15%'}}>
   <Row>
 
   <Col><Card.Img style={{border:'round',width:'400px'}} variant="top" src={foodDetails.images} /></Col>

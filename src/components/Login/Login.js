@@ -7,8 +7,8 @@ import "firebase/compat/auth";
 import firebaseConfig from './firebase.config';
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router-dom';
-
-
+import {Container,Row,Col,Form } from 'react-bootstrap';
+import Navbar from '../Header/Navbar/Navbar'
 
 if (firebase.apps.length === 0) {
     firebase.initializeApp(firebaseConfig);
@@ -167,47 +167,77 @@ const Login = () => {
     }
 
     return (
-        <div style={{ textAlign: 'center' }}>
-            <h2 style={{ color: 'green' }}>Login  Account </h2>
-            {/* <input type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id="" />
-            <label htmlFor="newUser">New User Sign up </label> */}
-            <form onSubmit={handleSubmit} style={{ backgroundColor: 'whiteSmoke', height: '250px' }}>
+        
+             <div style={{  width:'700px'}}  >
 
-                {newUser && <input type="text" id="login" class="fadeIn second" onBlur={handleBlur} name="name" placeholder="Input Name" required /> }
-                <br />
-                <br />
-                <h6>Email:
-                <input type="text" id="password" class="fadeIn third" onBlur={handleBlur} name="email" placeholder="Your email" required /></h6>
-                <br />
-                <h6>Password:
-                <input type="password" id="password" class="fadeIn third" onBlur={handleBlur} name="password" placeholder="password" required /></h6>
-                <br />
+<Navbar></Navbar>
 
-                {newUser && <input id="password" class="fadeIn third" type="password" onBlur={handleBlur} name="ConfirmPassword" placeholder="confirmPassword" />}
-                <br />
-                <br />
-                <input  class="fadeIn fourth" type="submit" value={newUser ? 'Sign Up' : 'Sign In'} />
-            </form>
-            <input type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id="" />
-            <label style={{ color: 'green' }} htmlFor="newUser">New User Sign up </label>
+<h2  style={{ color: 'black',marginTop: '20%' ,textAlign:'center' }}>Login  Account </h2>
+    <Container class="mt-5 d-flex " style={{marginLeft:'10%'}} >
+<Row>
 
-            <p style={{ color: 'red' }}>{user.error}</p>
-            {user.success && <p style={{ color: 'green' }}> User {newUser ? 'create' : 'Logged In'} Success </p>}
+<Col class="md-5">
 
 
-            <br></br>
-            <p>Or sign with</p>
-            <Button class="fadeIn fourth" onClick={handleGoogleSignIn} variant="success">  <FontAwesomeIcon icon={faCoffee} /> Sign In With Google</Button>
-        </div>
+<form  style={{backgroundColor:'whiteSmoke'}} onSubmit={handleSubmit} >
+  <div class="form-group">
+  {newUser && <label for="exampleInputEmail1">Email address</label> &&  <input type="text" id="login" class="form-control" onBlur={handleBlur} name="name" placeholder="Input Name" required /> }
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
+  </div>
+  <div class="form-check">
+  <br></br>
+   {/* {newUser && <input id="password" class="fadeIn third" type="password" onBlur={handleBlur} name="ConfirmPassword" placeholder="confirmPassword" />} */}
+               <input  style={{ marginLeft:'14%',width:'130px'}}  type="submit" class="btn btn-primary" value={newUser ? 'Sign Up' : 'Sign In'} />
+  </div>
+  
+</form >
+         <input style={{ marginLeft:'20%'}} type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id="" />
+             <label style={{ color: 'green' }} htmlFor="newUser">New User Sign up </label>
+
+             <p style={{ color: 'red' }}>{user.error}</p>
+             {user.success && <p style={{ color: 'green' }}> User {newUser ? 'create' : 'Logged In'} Success </p>}
+
+             <br></br>
+             
+             <p style={{ marginLeft:'25%'}}>Or sign with</p>
+            < Button style={{ marginLeft:'12%'}}  class="fadeIn fourth" onClick={handleGoogleSignIn} variant="success">  <FontAwesomeIcon icon={faCoffee} /> Sign In With Google</Button>
+
+
+</Col>
+
+<Col class="md-5" style={{backgroundColor:'orange'}} >
+
+        <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_q5pk6p1k.json" 
+            background="transparent" 
+                speed="1" 
+                style={{width: '400px', height: '400px'}} 
+                loop 
+                autoplay>
+        </lottie-player>
+
+
+
+       
+
+
+</Col>
+
+</Row>
+
+
+    </Container>
+
+             </div>
+
+      
     );
 };
     
-
-
-
-
-
-
 
 export default Login;
 

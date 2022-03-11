@@ -44,7 +44,7 @@ const Foods = () => {
         <div style={{ marginTop: '3%',  }} className="row my-5">
               
 
-            <div style={{ marginLeft: '25%',}}className="search-container" md="6">
+            <div style={{marginLeft:'3%' }}className="search-container" md="6">
       <form className="form-inline mt-4 mb-4">
        
         
@@ -53,8 +53,8 @@ const Foods = () => {
        
       </form>
     </div>
-
-     <h1 style={{ marginLeft: '44%',  }} > Menues</h1> 
+    <h1 style={{ marginLeft:'3%' }} > Menues</h1>
+      {/*   <button className=" btn primary width:30"> Breakfast</button> <button> Lunch</button> <button>Dinner</button> */}
 
 
             {

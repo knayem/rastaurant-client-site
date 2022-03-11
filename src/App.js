@@ -21,7 +21,7 @@ import {
   Switch,
   Link
 } from "react-router-dom";
-import Context from './context/Context';
+
 
 export const UserContext = createContext();
 
@@ -39,7 +39,7 @@ function App() {
 
     <div>
 
-
+<UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
 
 
 <Router>
@@ -58,11 +58,11 @@ function App() {
             <Dashboard></Dashboard>
           </Route>
 
-          <Route path="/cart">
+          <PrivateRoute path="/cart">
              {/* <Cart cart={cart}></Cart> */}
              <Cart ></Cart>
 
-          </Route >
+          </PrivateRoute>
 
           <Route path="/food/:id">
                 <DetailsFood></DetailsFood>
@@ -95,7 +95,7 @@ function App() {
 
 
     
-
+    </UserContext.Provider>
 
     </div>
 

@@ -5,7 +5,7 @@ import Navbar from '../Header/Navbar/Navbar'
 import { FaTrash, } from 'react-icons/fa'
 import { faDollarSign } from '@fortawesome/free-solid-svg-icons'
 import { useEffect, useState } from 'react';
-
+import { Button, Card,Container,Row,Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { } from 'react-bootstrap';
 
@@ -16,16 +16,16 @@ const Cart = () => {
      
     const [quantity, setQuantity]= useState(1)
     
-    const subTotal = cartItems.reduce((acc,crr) => {
-        return acc + (crr.price * crr.price) ;
-    },0)
-    const totalQuantity = cartItems.reduce((acc,crr) => {
-        return acc + crr.quantity ;
-    },0)
+    // const subTotal = cartItems.reduce((acc,crr) => {
+    //     return acc + (crr.price * crr.price) ;
+    // },0)
+    // const totalQuantity = cartItems.reduce((acc,crr) => {
+    //     return acc + crr.quantity ;
+    // },0)
     //const tax = (subTotal / 100) * 5;
     //const deliveryFee = totalQuantity && 2;
     //const grandTotal = subTotal +  deliveryFee;
-    //let total = cartItems.reduce((previous, product) => previous + product.price, 0);
+    let total = cartItems.reduce((previous, product) => previous + product.price, 0);
 
     const removeFromCart = (food) => {
 
@@ -47,8 +47,10 @@ const Cart = () => {
 
             <Navbar></Navbar>
 
-            <div className="twin-container mt-3 " >
-                <table style={{ marginTop: '8%', marginLeft: '10%' }} className="table">
+            <Container style={{ marginTop: '18%',  }} className="twin-container " >
+            <Row>
+
+             <Col>   <table style={{ marginTop: '8%',  }} className="table rounded border p-5">
 
                     <thead>
                         <tr>
@@ -82,16 +84,18 @@ const Cart = () => {
                     </tbody>
 
 
-                </table>
+                </table> </Col>
 
-                <div className="cart-container mt-5">
 
-                    <h1 style={{ marginLeft: '16%', fontSize: '30px' }}>Total Amounts:<br></br>{subTotal} <span style={{ color: 'red' }}>($) </span> </h1>
+               <Col> <div className="cart-container mt-5">
+
+                    <h1 style={{ marginLeft: '16%', fontSize: '30px' }}>Total Amounts:<br></br>{total} <span style={{ color: 'red' }}>($) </span> </h1>
                     <br></br>
                     <button style={{ marginLeft: '16%'}} className="btn btn-primary">Place Order</button>
-                </div>
+                </div> </Col>
+                </Row>
 
-            </div>
+            </Container>
 
 
 

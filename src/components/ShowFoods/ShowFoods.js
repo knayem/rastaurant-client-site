@@ -32,7 +32,10 @@ const ShowFoods = (props) => {
  
     return (
 
+ 
       <div className="col-md-3 mb-3">
+
+       
      
      <Container  className="d-flex cart-items" >
           <div className="card text-center ">
