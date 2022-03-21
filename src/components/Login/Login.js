@@ -168,11 +168,11 @@ const Login = () => {
 
     return (
         
-             <div style={{  width:'700px'}}  >
+             <div style={{  width:'700px' ,marginLeft:'20%'} }  >
 
 <Navbar></Navbar>
 
-<h2  style={{ color: 'black',marginTop: '20%' ,textAlign:'center' }}>Login  Account </h2>
+<h2  style={{ color: 'black',marginTop: '20%' ,textAlign:'center' ,fontSize:'40px' }}>𝙇𝙤𝙜𝙞𝙣 𝘼𝙘𝙘𝙤𝙪𝙣𝙩</h2>
     <Container class="mt-5 d-flex " style={{marginLeft:'10%'}} >
 <Row>
 
@@ -181,7 +181,7 @@ const Login = () => {
 
 <form  style={{backgroundColor:'whiteSmoke'}} onSubmit={handleSubmit} >
   <div class="form-group">
-  {newUser && <label for="exampleInputEmail1">Email address</label> &&  <input type="text" id="login" class="form-control" onBlur={handleBlur} name="name" placeholder="Input Name" required /> }
+  { newUser && <label for="exampleInputEmail1">Email address</label> &&  <input type="text" id="login" class="form-control" onBlur={handleBlur} name="name" placeholder="Input Name" required /> }
     <label for="exampleInputEmail1">Email address</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
   </div>
@@ -198,7 +198,8 @@ const Login = () => {
 </form >
          <input style={{ marginLeft:'20%'}} type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id="" />
              <label style={{ color: 'green' }} htmlFor="newUser">New User Sign up </label>
-
+ 
+ 
              <p style={{ color: 'red' }}>{user.error}</p>
              {user.success && <p style={{ color: 'green' }}> User {newUser ? 'create' : 'Logged In'} Success </p>}
 
@@ -207,7 +208,7 @@ const Login = () => {
              <p style={{ marginLeft:'25%'}}>Or sign with</p>
             < Button style={{ marginLeft:'12%'}}  class="fadeIn fourth" onClick={handleGoogleSignIn} variant="success">  <FontAwesomeIcon icon={faCoffee} /> Sign In With Google</Button>
 
-
+            
 </Col>
 
 <Col class="md-5" style={{backgroundColor:'orange'}} >

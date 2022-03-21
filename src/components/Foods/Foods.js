@@ -3,17 +3,18 @@ import ShowFoods from '../ShowFoods/ShowFoods';
 import './Food.css'
 
 import { useDispatch, useSelector } from 'react-redux';
+import { FormControl,Form,Button } from 'react-bootstrap';
 
 const Foods = () => {
 
     const [foods, setFoods] = useState([])
-
+    const [selectedFoodType, setSelectedFoodType] = useState("Breakfast");
 
     const [displayItems, setDisplayItems] = useState([])
 
     const {cartItems}=useSelector(state=>state.cartReducer)
-
-
+ 
+    const selectedFoods =  foods.filter(food => food.type == selectedFoodType)
    
 
     useEffect(() => {
@@ -37,7 +38,7 @@ const Foods = () => {
           console.log(matchItems.length)
           setDisplayItems(matchItems);
       }
-
+ 
      
 
     return (
@@ -45,25 +46,56 @@ const Foods = () => {
               
 
             <div style={{marginLeft:'3%' }}className="search-container" md="6">
-      <form className="form-inline mt-4 mb-4">
+     
+            <Form className="d-flex">
+        <FormControl
+          type="search"
+          placeholder="Search Your Food"
+          className="me-2"
+          aria-label="Search"
+          style={{width:'450px'}}
+
+          onChange={handleSearch}
+        />
+        
+      </Form>
+     
+     
+     
+     
+      {/* <form className="form-inline mt-4 mb-4">
        
         
         <input className="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search Your Food"   aria-label="Search" 
         onChange={handleSearch}/>
        
-      </form>
+      </form> */}
     </div>
-    <h1 style={{ marginLeft:'3%' }} > Menues</h1>
-      {/*   <button className=" btn primary width:30"> Breakfast</button> <button> Lunch</button> <button>Dinner</button> */}
-
-
+    {/* <nav>
+                    <ul className="nav justify-content-center">
+                        <button onClick={() => setSelectedFoodType("Breakfast")} className="nav-item btn btn-outline-dark">
+                            <span  to="breakfast" className={selectedFoodType === "Breakfast" ?  "active nav-link" : "nav-link"}>Breakfast</span>
+                        </button>
+                        <button onClick={() => setSelectedFoodType("Lunch")} className="nav-item btn btn-outline-dark">
+                            <span to="breakfast" className={selectedFoodType === "Lunch" ?  "active nav-link" : "nav-link"}>Lunch</span>
+                        </button>
+                        <button onClick={() => setSelectedFoodType("Dinner")} className="nav-item btn btn-outline-dark">
+                            <span to="breakfast" className={selectedFoodType === "Dinner" ?  "active nav-link" : "nav-link"}>Dinner</span>
+                        </button>
+                    </ul>
+                </nav> */}
+    <div className="justify-content-center" > <h1 className="display-6  fw-border text center" style={{ marginLeft:'3%' }} > Menues</h1></div>
+    
             {
 
                 // foods.map(food => <ShowFoods food={food}  handleAddItem={handleAddFood}
                 //     ></ShowFoods>) 
 
-                displayItems.map(food => <ShowFoods food={food}   
-                    ></ShowFoods>) //searching
+                 displayItems.map(food => <ShowFoods food={food}   
+                     ></ShowFoods>) //searching
+
+                // selectedFoods.map(food => <ShowFoods food={food}   
+                //     ></ShowFoods>) //filteringFoodType
 
             }
 

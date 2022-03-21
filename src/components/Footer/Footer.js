@@ -21,20 +21,12 @@ const Footer = () => {
                         <ul className="list-unstyled">
                             <li><Link to="/help">Get Help</Link></li>
                             <li><Link to="/faq">Read FAQ</Link></li>
-                            
+                            <small className="text-secondary align-items-center"> Copyright {(new Date()).getFullYear()} All Rights Reserved <a target="_blank" href="https://linkedin.com/in/abu-bakor-siddik-4b9119211"> abs</a> </small>
                         </ul>
                     </div>
                 </div>
 
-                <div className="footer-bottom d-flex justify-content-between align-items-center">
-                    <small className="text-secondary align-items-center">Copyright &copy; abs </small>
-                    <ul className="list-inline">
-                        <li className="list-inline-item ml-3"><a href="">Privacy Policy.</a></li>
-                        <li className="list-inline-item  ml-3"><a href="">Terms of Use</a></li>
-                      
-                    </ul>
-
-                </div>
+                
             </div>
         </footer>
     );

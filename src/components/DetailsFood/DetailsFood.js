@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import Navbar from '../Header/Navbar/Navbar'
 import { Button, Card,Container,Row,Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
+import Footer from '../Footer/Footer';
 
 
 const DetailsFood = () => {
@@ -57,8 +58,11 @@ const DetailsFood = () => {
     </Col>
    
   </Row>
+
+  
   
 </Container> 
+
             
         </div>
     );
