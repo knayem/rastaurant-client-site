@@ -32,7 +32,7 @@ const Navbar = () => {
 
 
             <li class="nav-item">
-              <Link to="/orderReview" style={{ color: 'white', fontSize: '23px' }} class="nav-link" >Order Review</Link>
+              <Link to="/serviceADD" style={{ color: 'white', fontSize: '23px' }} class="nav-link" >Service</Link>
             </li>
 
             <li class="nav-item">

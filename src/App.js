@@ -47,19 +47,16 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
-            {/* <Foods cart={cart} handleAddItem={cartHandler} setCart={setCart}></Foods> */}
+           
 
           </Route>
           <Route path="/home">
             <Home></Home>
           </Route>
 
-          <Route path="/dashboard">
-            <Dashboard></Dashboard>
-          </Route>
 
           <PrivateRoute path="/cart">
-             {/* <Cart cart={cart}></Cart> */}
+            
              <Cart ></Cart>
 
           </PrivateRoute>
@@ -68,7 +65,7 @@ function App() {
                 <DetailsFood></DetailsFood>
             </Route>
 
-            <Route path="/orderReview">
+            <Route path="/serviceADD">
             <OrderReview></OrderReview>
           </Route>
 
@@ -99,60 +96,7 @@ function App() {
 
     </div>
 
-//     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
 
-// <Router>
-      
-//         <Switch>
-//           <Route exact path="/">
-//             <Home />
-//             <Foods cart={cart} handleAddItem={cartHandler} setCart={setCart}></Foods>
-//           </Route>
-//           <Route path="/home">
-//             <Home></Home>
-//           </Route>
-
-//           <Route path="/dashboard">
-//             <Dashboard></Dashboard>
-//           </Route>
-
-//           <PrivateRoute path="/cart">
-//              <Cart cart={cart}></Cart>
-//           </PrivateRoute >
-
-//           <PrivateRoute path="/food/:id">
-//                 <DetailsFood></DetailsFood>
-//             </PrivateRoute>
-
-//             <Route path="/orderReview">
-//             <OrderReview></OrderReview>
-//           </Route>
-
-           
-          
-
-//           {/* <Route path="*">
-//             <NoMatch/>
-//           </Route>  */}
-
-//           <Route path="/order">
-//             <Order></Order>
-//           </Route>
-//           <Route path="/login">
-//             <Login></Login>
-//           </Route>
-
-          
-
-
-//         </Switch>
-
-//       </Router>
-
-
-    
-      
-//       </UserContext.Provider>
   );
 }
 

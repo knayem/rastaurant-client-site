@@ -4,7 +4,7 @@ import haderImage from '../../../images/nw.jpg'
 const HeaderMain = () => {
     return (
         <main class="row BG d-flex align-item-center">
-            <div className="col-md-4 offset-1 mt-5 ">
+            <div className="col-md-4 offset-1 mt-5  ">
                 <br></br>
             <h1 style={{color: 'tomato',fontSize: '18px', fontFamily: 'Zen Dots'}}> <br/> <span style={{color: 'green' ,fontFamily: 'Krona One',fontSize: '22px'}}> As-salamu Alaykum </span> <br/>  Enjoy Your Food rastaurant  <br/> <br/> <span style={{color: 'red' ,fontFamily: 'Krona One',fontSize: '50px'}}> Fresh & Testy </span></h1>
               <h6 style={{textAlign: 'justify',color: 'silver'}}> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae assumenda ex deleniti tempore excepturi voluptatibus cumque unde iure blanditiis voluptate, voluptatem quos ab et doloremque </h6>
